@@ -115,11 +115,6 @@
     <a href="/RedpwerBlog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/RedpwerBlog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
-
-  </li>
         <li class="menu-item menu-item-tags">
 
     <a href="/RedpwerBlog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
@@ -133,16 +128,6 @@
         <li class="menu-item menu-item-archives">
 
     <a href="/RedpwerBlog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-        <li class="menu-item menu-item-schedule">
-
-    <a href="/RedpwerBlog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
-
-  </li>
-        <li class="menu-item menu-item-sitemap">
-
-    <a href="/RedpwerBlog/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
 
   </li>
   </ul>
@@ -230,7 +215,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-hans">
-    <link itemprop="mainEntityOfPage" href="https://redpower424.github.io/RedpwerBlog/2023/06/08/article-title/">
+    <link itemprop="mainEntityOfPage" href="https://redpower424.github.io/RedpwerBlog/2023/06/08/%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%20ViewController/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/RedpwerBlog/images/avatar.jpg">
@@ -244,7 +229,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/RedpwerBlog/2023/06/08/article-title/" class="post-title-link" itemprop="url">单向数据流的函数式 ViewController</a>
+            <a href="/RedpwerBlog/2023/06/08/%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%20ViewController/" class="post-title-link" itemprop="url">单向数据流的函数式 ViewController</a>
         </h2>
 
         <div class="post-meta">
@@ -338,63 +323,6 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">func</span> <span class="title function_">tableView</span>(<span class="keyword">_</span> <span class="params">tableView</span>: <span class="type">UITableView</span>, <span class="params">didSelectRowAt</span> <span class="params">indexPath</span>: <span class="type">IndexPath</span>) &#123;</span><br><span class="line">    <span class="keyword">guard</span> indexPath.section <span class="operator">==</span> <span class="type">TableViewControllerDataSource</span>.<span class="type">Section</span>.todos.rawValue <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    store.dispatch(.removeToDo(index: indexPath.row))</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">func</span> <span class="title function_">addButtonPressed</span>(<span class="keyword">_</span> <span class="params">sender</span>: <span class="keyword">Any</span>) &#123;</span><br><span class="line">    store.dispatch(.addToDos(items: [store.state.text]))</span><br><span class="line">    store.dispatch(.updateText(text: <span class="string">&quot;&quot;</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">inputChanged</span>(<span class="params">cell</span>: <span class="type">TableViewInputCell</span>, <span class="params">text</span>: <span class="type">String</span>) &#123;</span><br><span class="line">    store.dispatch(.updateText(text: text))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在例子中，我们的 Store 位于 View Controller 中，其实只要存在状态变化，这套方式可以在任何地方适用，完全可以在其他的层级中引入 Store。只要能保证数据的单向流动以及完整的状态变更，这套方式就具有良好的扩展性。</p>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-hans">
-    <link itemprop="mainEntityOfPage" href="https://redpower424.github.io/RedpwerBlog/2023/06/08/oh-year/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/RedpwerBlog/images/avatar.jpg">
-      <meta itemprop="name" content="Redpower">
-      <meta itemprop="description" content="good boy">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Redpower">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/RedpwerBlog/2023/06/08/oh-year/" class="post-title-link" itemprop="url">oh year</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-06-08 16:01:12" itemprop="dateCreated datePublished" datetime="2023-06-08T16:01:12+08:00">2023-06-08</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
       
     </div>
 
@@ -547,7 +475,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/RedpwerBlog/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -598,8 +526,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Redpower</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
-  </div>
 
         
 
@@ -630,6 +556,8 @@
 <script src="/RedpwerBlog/js/next-boot.js"></script>
 
 
+  <script defer src="/RedpwerBlog/lib/three/three.min.js"></script>
+    <script defer src="/RedpwerBlog/lib/three/three-waves.min.js"></script>
 
 
   
